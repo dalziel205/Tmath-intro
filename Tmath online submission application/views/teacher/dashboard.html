@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMath Teacher Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/teacher.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="teacher-container">
+        <!-- Sidebar Navigation -->
+        <nav class="teacher-sidebar">
+            <div class="sidebar-header">
+                <img src="/static/images/Logo-Heading.webp" alt="TMath Logo" class="sidebar-logo">
+                <h2>Teacher Portal</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <a href="/teacher/dashboard">
+                        <span class="material-icons">dashboard</span>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="/teacher/classes">
+                        <span class="material-icons">class</span>
+                        My Classes
+                    </a>
+                </li>
+                <li>
+                    <a href="/teacher/assignments">
+                        <span class="material-icons">assignment</span>
+                        Assignments
+                    </a>
+                </li>
+                <li>
+                    <a href="/teacher/submissions">
+                        <span class="material-icons">grading</span>
+                        Submissions
+                    </a>
+                </li>
+                <li>
+                    <a href="/teacher/students">
+                        <span class="material-icons">people</span>
+                        Students
+                    </a>
+                </li>
+                <li>
+                    <a href="/teacher/profile">
+                        <span class="material-icons">account_circle</span>
+                        Profile
+                    </a>
+                </li>
+                <li class="logout">
+                    <a href="/auth/logout">
+                        <span class="material-icons">logout</span>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="teacher-main">
+            <header class="teacher-header">
+                <div class="header-search">
+                    <span class="material-icons">search</span>
+                    <input type="text" placeholder="Search classes, assignments...">
+                </div>
+                <div class="header-profile">
+                    <div class="notifications">
+                        <span class="material-icons">notifications</span>
+                        <span class="notification-badge">0</span>
+                    </div>
+                    <div class="profile-info">
+                        <img src="/static/images/teacher-avatar.png" alt="Teacher Avatar">
+                        <span class="teacher-name">Teacher Name</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Overview Cards -->
+                <div class="overview-cards">
+                    <div class="card">
+                        <div class="card-icon">
+                            <span class="material-icons">class</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Active Classes</h3>
+                            <p class="count">0</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <span class="material-icons">assignment</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Active Assignments</h3>
+                            <p class="count">0</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <span class="material-icons">people</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Total Students</h3>
+                            <p class="count">0</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <span class="material-icons">pending_actions</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Pending Submissions</h3>
+                            <p class="count">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Submissions -->
+                <div class="recent-submissions">
+                    <div class="section-header">
+                        <h2>Recent Submissions</h2>
+                        <a href="/teacher/submissions" class="view-all">View All</a>
+                    </div>
+                    <div class="submissions-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Assignment</th>
+                                    <th>Class</th>
+                                    <th>Submitted</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Submissions will be populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Quick Actions and Class Overview -->
+                <div class="dashboard-grid">
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <div class="section-header">
+                            <h2>Quick Actions</h2>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="action-btn" onclick="location.href='/teacher/assignments/new'">
+                                <span class="material-icons">add</span>
+                                Create Assignment
+                            </button>
+                            <button class="action-btn" onclick="location.href='/teacher/classes/new'">
+                                <span class="material-icons">class</span>
+                                Create Class
+                            </button>
+                            <button class="action-btn" onclick="location.href='/teacher/submissions/grade'">
+                                <span class="material-icons">grading</span>
+                                Grade Submissions
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Class Overview -->
+                    <div class="class-overview">
+                        <div class="section-header">
+                            <h2>Class Overview</h2>
+                            <a href="/teacher/classes" class="view-all">View All</a>
+                        </div>
+                        <div class="class-list">
+                            <!-- Classes will be populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Deadlines -->
+                <div class="upcoming-deadlines">
+                    <div class="section-header">
+                        <h2>Upcoming Deadlines</h2>
+                    </div>
+                    <div class="deadline-timeline">
+                        <!-- Deadlines will be populated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/js/teacher.js"></script>
+</body>
+</html> 

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMath Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/admin.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar Navigation -->
+        <nav class="admin-sidebar">
+            <div class="sidebar-header">
+                <img src="/static/images/Logo-Heading.webp" alt="TMath Logo" class="sidebar-logo">
+                <h2>Admin Panel</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <a href="/admin/dashboard">
+                        <span class="material-icons">dashboard</span>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/classes">
+                        <span class="material-icons">class</span>
+                        Classes
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/teachers">
+                        <span class="material-icons">school</span>
+                        Teachers
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/students">
+                        <span class="material-icons">people</span>
+                        Students
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/activity">
+                        <span class="material-icons">history</span>
+                        Activity Logs
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/settings">
+                        <span class="material-icons">settings</span>
+                        Settings
+                    </a>
+                </li>
+                <li class="logout">
+                    <a href="/auth/logout">
+                        <span class="material-icons">logout</span>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <div class="header-search">
+                    <span class="material-icons">search</span>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="header-profile">
+                    <span class="material-icons">notifications</span>
+                    <div class="profile-info">
+                        <img src="/static/images/admin-avatar.png" alt="Admin Avatar">
+                        <span>Administrator</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Overview Cards -->
+                <div class="overview-cards">
+                    <div class="card">
+                        <div class="card-icon">
+                            <span class="material-icons">class</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Total Classes</h3>
+                            <p class="count">0</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <span class="material-icons">school</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Total Teachers</h3>
+                            <p class="count">0</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <span class="material-icons">people</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Total Students</h3>
+                            <p class="count">0</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <span class="material-icons">assignment</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Total Submissions</h3>
+                            <p class="count">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="recent-activity">
+                    <div class="section-header">
+                        <h2>Recent Activity</h2>
+                        <a href="/admin/activity" class="view-all">View All</a>
+                    </div>
+                    <div class="activity-list">
+                        <!-- Activity items will be populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <div class="section-header">
+                        <h2>Quick Actions</h2>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="action-btn" onclick="location.href='/admin/classes/new'">
+                            <span class="material-icons">add</span>
+                            Create New Class
+                        </button>
+                        <button class="action-btn" onclick="location.href='/admin/teachers/new'">
+                            <span class="material-icons">person_add</span>
+                            Add Teacher
+                        </button>
+                        <button class="action-btn" onclick="location.href='/admin/students/new'">
+                            <span class="material-icons">group_add</span>
+                            Add Student
+                        </button>
+                        <button class="action-btn" onclick="location.href='/admin/assignments/new'">
+                            <span class="material-icons">assignment</span>
+                            Create Assignment
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/js/admin.js"></script>
+</body>
+</html> 
